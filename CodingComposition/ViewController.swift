@@ -58,6 +58,8 @@ final class ViewController: NSViewController {
         {
             return bookmarkURL
         } else {
+            UserDefaults.standard.removeObject(forKey: "composition")
+            
             var observation: NSKeyValueObservation?
             var continuation: CheckedContinuation<URL, Error>?
             let onCancel: () -> Void = {
